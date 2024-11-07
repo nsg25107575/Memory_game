@@ -1,0 +1,116 @@
+
+body {
+    font-family: Arial, sans-serif;   
+    height: 100vh;
+    margin: 0;
+    transition: background-color 0.3s, color 0.3s;
+    background-color: #f0f0f0;
+}
+
+#gameWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: inherit;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 100px); 
+    grid-gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.card {
+    width: 100px;
+    height: 100px;
+    background-color: #4CAF50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 2em;
+    color: transparent;
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+}
+
+.card.flipped {
+    color: #fff;
+    background-color: #2196F3;
+}
+
+.card.matched {
+    background-color: #9C27B0;
+    pointer-events: none;
+}
+
+.card::after {
+    content: '';
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: bounce 0.5s infinite alternate;
+    opacity: 0;
+}
+
+body.light-theme {
+    background-color: #f0f0f0;
+    color: #000;
+}
+
+.game-board.light-theme .card {
+    background-color: #4CAF50;
+}
+
+button.light-theme {
+    background-color: #2196F3;
+    color: #fff;
+}
+
+body.dark-theme {
+    background-color: #121212;
+    color: #fff;
+}
+
+.game-board.dark-theme .card {
+    background-color: #333;
+}
+
+button.dark-theme {
+    background-color: #f44336;
+    color: #fff;
+}
+
+#gameStats {
+    margin-top: 20px;
+    font-size: 18px;
+    color: inherit;
+}
+
+#themeSelector {
+    margin-top: 20px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
